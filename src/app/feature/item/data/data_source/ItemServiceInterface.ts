@@ -3,8 +3,8 @@ import { ItemModel } from '../model/ItemModel';
 
 export interface ItemServiceInterface {
 
-    createItem(item: ItemModel): ItemModel;
+    createItem(item: ItemModel, token: string): Observable<ItemModel>;
 
-     listItem(): Observable<ItemModel[]> ;
+     listItem(token: string): Observable<ItemModel[]> ;
 
 }

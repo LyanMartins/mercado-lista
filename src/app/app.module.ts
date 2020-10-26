@@ -20,6 +20,7 @@ import { ListRepository } from './feature/list/data/repository/ListRepository';
 import { ListService } from './feature/list/data/data_source/ListService';
 import { GetList } from './feature/list/domain/use_case/GetList';
 import { CreateList } from './feature/list/domain/use_case/CreateList';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CreateList } from './feature/list/domain/use_case/CreateList';
   imports: [
     ReactiveFormsModule,
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule

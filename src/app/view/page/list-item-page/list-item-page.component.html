@@ -1,11 +1,11 @@
 <app-navbar [config]="config" ></app-navbar>
 <div class="uk-container  uk-margin-left uk-margin-right">
-    <button class="uk-button uk-button-primary uk-width-1-1" routerLink="/create" >Adicionar</button>
+    <button class="uk-button uk-button-primary uk-width-1-1" [routerLink]="['/item-create', token]">Adicionar</button>
     <div class="uk-margin-large-top">
-        <div class="uk-grid-small" *ngIf="item" uk-grid>
-            <input class="uk-checkbox uk-margin-left m-5p" [attr.checked]="item.checked ? 'checked' : null"   type="checkbox">
-            <p class="uk-width-expand" uk-leader>{{ item.name }}</p>
-            <div>{{ item.price | currency:'BRL' }}</div>
+        <div class="uk-grid-small" *ngFor="let it of item" uk-grid>
+            <input class="uk-checkbox uk-margin-left m-5p" [attr.checked]="it.checked ? 'checked' : null"   type="checkbox">
+            <p class="uk-width-expand" uk-leader>{{ it.title }}</p>
+            <div>{{ it.price }}</div> 
         </div>
     </div>
     

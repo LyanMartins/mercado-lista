@@ -3,5 +3,5 @@ import {Item} from "../entity/Item";
 
 export interface CreateItemInterface {
 
-    execute(item: Item): Observable<Item>;
+    execute(item: Item, token: string): Observable<Item>;
 }

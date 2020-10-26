@@ -1,31 +1,34 @@
 import { Model } from 'src/app/common/model/model';
 import { Item } from '../../domain/entity/Item';
 
-export class ItemModel extends Model {
-    public name: string;
+export class ItemModel {
+    public title: string;
     public quantity: number;
     public checked: boolean;
     public price: number;
+    public inActived: boolean = true;
     
     constructor(
-        name: string,
+        title: string,
         quantity: number,
         checked: boolean,
         price: number,
+        inActived: boolean,
     ){
-        super()
-        this.name = name;
+        this.title = title;
         this.quantity = quantity;
         this.checked = checked;
         this.price = price;
+        this.inActived = inActived;
     }
 
     public toEntity(): Item{
         return new Item(
-            this.name,
+            this.title,
             this.quantity,
             this.checked,
-            this.price
+            this.price,
+            this.inActived
         );
     }
 }

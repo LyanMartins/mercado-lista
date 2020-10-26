@@ -13,9 +13,8 @@ export class ListItem implements ListItemInterface{
         this.itemRepository = itemRepository;
     }
 
-    execute(): Item{
-        return this.itemRepository.listItem();
-        
+    execute(token: string): Observable<Item[]> {
+        return this.itemRepository.listItem(token);  
     }
     
 }

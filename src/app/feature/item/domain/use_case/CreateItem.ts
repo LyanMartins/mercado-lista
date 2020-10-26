@@ -15,9 +15,9 @@ export class CreateItem implements CreateItemInterface{
         console.log("entrou no use_case");
     }
 
-    execute(item: Item): Observable<Item>{
-        let data = this.itemRepository.createItem(item);
-        return of(data);
+    execute(item: Item, token: string): Observable<Item>{
+        let data = this.itemRepository.createItem(item, token);
+        return data;
     }
     
 }

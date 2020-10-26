@@ -7,8 +7,8 @@ import { NewListPageComponent } from './view/page/new-list-page/new-list-page.co
 
 const routes: Routes = [ 
   { path: '', component: ListPageComponent, data: {animation: 'isLeft'} },
-  { path: 'create', component: NewItemPageComponent, data: {animation: 'isRight'}},
-  { path: 'list/:id', component: ListItemPageComponent, data: {animation: 'isRight'}},
+  { path: 'item-create/:token', component: NewItemPageComponent, data: {animation: 'isRight'}},
+  { path: 'list/:token', component: ListItemPageComponent, data: {animation: 'isRight'}},
   { path: 'list-create', component: NewListPageComponent, data: {animation: 'isRight'}},
 ];
 

@@ -1,38 +1,25 @@
 import { ItemModel } from '../../data/model/ItemModel';
 
 export class Item {
-    public name: string;
+
+    public title: string;
     public quantity: number;
     public checked: boolean;
     public price: number;
+    public inActived: boolean = true;
     
     constructor(
-        name: string,
+        title: string,
         quantity: number,
         checked: boolean,
         price: number,
+        inActived: boolean,
     ){
-        this.name = name;
+        this.title = title;
         this.quantity = quantity;
         this.checked = checked;
         this.price = price;
-    }
-
-    public fromEntity(): ItemModel{
-        return new ItemModel(
-            this.name,
-            this.quantity,
-            this.checked,
-            this.price
-        );
-    }
-    public fromModel(model): Item {
-        return new Item(
-            model.nome,
-            model.quantity,
-            model.checked,
-            model.price
-        )
+        this.inActived = inActived;
     }
 
 }

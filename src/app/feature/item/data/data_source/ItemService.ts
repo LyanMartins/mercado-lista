@@ -8,20 +8,19 @@ import { ItemServiceInterface } from './ItemServiceInterface';
 @Injectable()
 export class ItemService extends Api implements ItemServiceInterface {
 
-    litem2;
     constructor(private httpClient: HttpClient){
         super();
         console.log("dentro do service");
     }
-    listItem(): Observable<ItemModel[]> {
+    listItem(token: string): Observable<ItemModel[]> {
         let item = this.httpClient
-            .get<ItemModel[]>(this.url + 'list/item',{headers: this.httpOptions})
-        
+            .get<ItemModel[]>(`${this.url}item/${token}`,{headers: this.httpOptions})
         return item;
     }
 
-    createItem(item: ItemModel): ItemModel {
-            return new ItemModel('mock',1,true,3.5)
+    createItem(item: ItemModel, token: string): Observable<ItemModel> {
+        let response = this.httpClient.post<ItemModel>(`${this.url}item/${token}`,item ,{headers: this.httpOptions});
+        return response;
     }
 
 }
